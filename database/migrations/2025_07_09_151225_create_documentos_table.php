@@ -11,13 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documentos', function (Blueprint $table) {
-            $table->id();
-            $table->string("nombre", 50);
-            $table->string("detallefileweb");
-            $table->string("detalle1");
-            $table->string("detalle2");
-            $table->string("detalle3");
+        Schema::create('documetalle3");
             
             $table->unsignedBigInteger("empresa_id");
             $table->foreign("empresa_id")->references("id")->on("empresas");
