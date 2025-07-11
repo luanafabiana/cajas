@@ -9,4 +9,17 @@ class Empresa extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function agencias()
+    {
+        return $this->hasMany(Agencia::class);
+    }
+
+    //relacion con departamento
+    public function departamentos()
+    {
+        return $this->hasMany(Departamento::class);
+    }
+
+
 }

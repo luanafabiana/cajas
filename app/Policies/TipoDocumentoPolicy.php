@@ -13,7 +13,7 @@ class TipoDocumentoPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class TipoDocumentoPolicy
      */
     public function view(User $user, tipo_documento $tipoDocumento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class TipoDocumentoPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class TipoDocumentoPolicy
      */
     public function update(User $user, tipo_documento $tipoDocumento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class TipoDocumentoPolicy
      */
     public function delete(User $user, tipo_documento $tipoDocumento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class TipoDocumentoPolicy
      */
     public function restore(User $user, tipo_documento $tipoDocumento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class TipoDocumentoPolicy
      */
     public function forceDelete(User $user, tipo_documento $tipoDocumento): bool
     {
-        //
+        return true;
     }
 }

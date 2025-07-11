@@ -13,7 +13,7 @@ class AgenciaPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class AgenciaPolicy
      */
     public function view(User $user, Agencia $agencia): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class AgenciaPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class AgenciaPolicy
      */
     public function update(User $user, Agencia $agencia): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class AgenciaPolicy
      */
     public function delete(User $user, Agencia $agencia): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class AgenciaPolicy
      */
     public function restore(User $user, Agencia $agencia): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class AgenciaPolicy
      */
     public function forceDelete(User $user, Agencia $agencia): bool
     {
-        //
+        return true;
     }
 }

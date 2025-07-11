@@ -13,7 +13,7 @@ class SubdepartamentoPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class SubdepartamentoPolicy
      */
     public function view(User $user, subdepartamento $subdepartamento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class SubdepartamentoPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class SubdepartamentoPolicy
      */
     public function update(User $user, subdepartamento $subdepartamento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class SubdepartamentoPolicy
      */
     public function delete(User $user, subdepartamento $subdepartamento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class SubdepartamentoPolicy
      */
     public function restore(User $user, subdepartamento $subdepartamento): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class SubdepartamentoPolicy
      */
     public function forceDelete(User $user, subdepartamento $subdepartamento): bool
     {
-        //
+        return true;
     }
 }
