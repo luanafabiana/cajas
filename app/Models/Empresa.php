@@ -21,5 +21,10 @@ class Empresa extends Model
         return $this->hasMany(Departamento::class);
     }
 
+    public function archivos()
+    {
+        return $this->hasMany(Archivo::class);
+    }
+
 
 }

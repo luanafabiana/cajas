@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
+use App\Models\Archivo;
 use App\Models\User;
-use App\Models\documento;
 use Illuminate\Auth\Access\Response;
 
-class DocumentoPolicy
+class ArchivoPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class DocumentoPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, documento $documento): bool
+    public function view(User $user, Archivo $archivo): bool
     {
         return true;
     }
@@ -35,7 +35,7 @@ class DocumentoPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, documento $documento): bool
+    public function update(User $user, Archivo $archivo): bool
     {
         return true;
     }
@@ -43,7 +43,7 @@ class DocumentoPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, documento $documento): bool
+    public function delete(User $user, Archivo $archivo): bool
     {
         return true;
     }
@@ -51,7 +51,7 @@ class DocumentoPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, documento $documento): bool
+    public function restore(User $user, Archivo $archivo): bool
     {
         return true;
     }
@@ -59,8 +59,9 @@ class DocumentoPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, documento $documento): bool
+    public function forceDelete(User $user, Archivo $archivo): bool
     {
         return true;
+        
     }
 }

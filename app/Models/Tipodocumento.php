@@ -12,7 +12,7 @@ class Tipodocumento extends Model
 {
     use HasFactory;
     protected $guarded =[];
-     public function documento(): HasOne
+    public function documento(): HasOne
     {
         return $this->hasOne(Documento::class);
     }
