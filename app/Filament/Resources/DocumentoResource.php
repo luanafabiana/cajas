@@ -52,7 +52,7 @@ class DocumentoResource extends Resource
                     ->label('Tipo documento') // Personaliza el label si lo necesitas
                     ->required()
                     ->relationship(
-                        name: 'tipoDocumento', // Nombre del método de relación en el modelo (public function empresa())
+                        name: 'tipodocumento', // Nombre del método de relación en el modelo (public function empresa())
                         titleAttribute: 'tipodocumento', // Columna de la tabla `empresas` que se mostrará en el Select
                     )
                     ->searchable() // Permite búsqueda dinámica (opcional)
@@ -82,7 +82,7 @@ class DocumentoResource extends Resource
                     ->searchable() // Permite búsqueda dinámica (opcional)
                     ->preload() // Carga opciones iniciales (opcional para muchos registros)
                     ->native(false), // Mejora la UI en algunos navegadores (opcional)
-                    //->columnSpanFull(), // Ocupa todo el ancho (opcional)
+                    // //->columnSpanFull(), // Ocupa todo el ancho (opcional)
 
             ]);
     }

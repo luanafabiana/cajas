@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\caja;
-use App\Http\Requests\StorecajaRequest;
-use App\Http\Requests\UpdatecajaRequest;
+use App\Models\Caja;
+use App\Http\Requests\StoreCajaRequest;
+use App\Http\Requests\UpdateCajaRequest;
 
 class CajaController extends Controller
 {
@@ -27,7 +27,7 @@ class CajaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorecajaRequest $request)
+    public function store(StoreCajaRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class CajaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(caja $caja)
+    public function show(Caja $caja)
     {
         //
     }
@@ -43,7 +43,7 @@ class CajaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(caja $caja)
+    public function edit(Caja $caja)
     {
         //
     }
@@ -51,7 +51,7 @@ class CajaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatecajaRequest $request, caja $caja)
+    public function update(UpdateCajaRequest $request, Caja $caja)
     {
         //
     }
@@ -59,7 +59,7 @@ class CajaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(caja $caja)
+    public function destroy(Caja $caja)
     {
         //
     }

@@ -20,6 +20,10 @@ class Empresa extends Model
     {
         return $this->hasMany(Departamento::class);
     }
+    public function documentos()
+    {
+        return $this->hasMany(Documento::class);
+    }
 
     public function archivos()
     {

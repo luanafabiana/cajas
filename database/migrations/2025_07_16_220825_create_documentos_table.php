@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
+            
             $table->string("nombre", 50);
             $table->string("detallefileweb");
             $table->string("detalle1");
@@ -22,8 +23,8 @@ return new class extends Migration
             $table->unsignedBigInteger("empresa_id");
             $table->foreign("empresa_id")->references("id")->on("empresas");
 
-            $table->unsignedBigInteger("tipo_documento_id");
-            $table->foreign("tipo_documento_id")->references("id")->on("tipo_documentos");
+            $table->unsignedBigInteger("tipodocumento_id");
+            $table->foreign("tipodocumento_id")->references("id")->on("tipodocumentos");
 
             $table->unsignedBigInteger("caja_id");
             $table->foreign("caja_id")->references("id")->on ("cajas");

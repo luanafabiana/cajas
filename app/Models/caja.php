@@ -4,9 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class caja extends Model
+class Caja extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    /**
+     * Get all of the comments for the caja
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function documentos(): HasMany
+    {
+        return $this->hasMany(Documento::class);
+    }
 }

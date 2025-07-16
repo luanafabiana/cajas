@@ -12,7 +12,7 @@ class Departamento extends Model
 
     public function empresa()
     {
-        return $this->hasMany(Empresa::class);
+        return $this->belongsTo(Empresa::class);
     }
     //relacion con subdepartamento
     public function subdepartamentos()

@@ -18,8 +18,6 @@ return new class extends Migration
             /*%%%%%%%%%%%%%%%%%%%%%%  llave foranea %%%%%%%%%%%%%%%%%%%%%%%%%%*/
             $table->unsignedBigInteger('departamento_id');
             $table->foreign('departamento_id')->references('id')->on('departamentos');
-            
-
             $table->timestamps();
         });
     }

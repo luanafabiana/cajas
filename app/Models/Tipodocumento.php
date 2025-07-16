@@ -16,4 +16,5 @@ class Tipodocumento extends Model
     {
         return $this->hasOne(Documento::class);
     }
+    
 }

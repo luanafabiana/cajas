@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('tipodocumentos', function (Blueprint $table) {
             $table->id();
             $table->string("tipodocumento",50);
-
-            
-
             $table->timestamps();
         });
     }

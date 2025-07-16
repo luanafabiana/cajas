@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
+use App\Models\Caja;
 use App\Models\User;
-use App\Models\caja;
 use Illuminate\Auth\Access\Response;
 
 class CajaPolicy
@@ -19,7 +19,7 @@ class CajaPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, caja $caja): bool
+    public function view(User $user, Caja $caja): bool
     {
         return true;
     }
@@ -35,7 +35,7 @@ class CajaPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, caja $caja): bool
+    public function update(User $user, Caja $caja): bool
     {
         return true;
     }
@@ -43,7 +43,7 @@ class CajaPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, caja $caja): bool
+    public function delete(User $user, Caja $caja): bool
     {
         return true;
     }
@@ -51,7 +51,7 @@ class CajaPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, caja $caja): bool
+    public function restore(User $user, Caja $caja): bool
     {
         return true;
     }
@@ -59,7 +59,7 @@ class CajaPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, caja $caja): bool
+    public function forceDelete(User $user, Caja $caja): bool
     {
         return true;
     }

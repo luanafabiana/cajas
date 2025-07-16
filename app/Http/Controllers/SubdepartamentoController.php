@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\subdepartamento;
-use App\Http\Requests\StoresubdepartamentoRequest;
-use App\Http\Requests\UpdatesubdepartamentoRequest;
+use App\Models\Subdepartamento;
+use App\Http\Requests\StoreSubdepartamentoRequest;
+use App\Http\Requests\UpdateSubdepartamentoRequest;
 
 class SubdepartamentoController extends Controller
 {
@@ -27,7 +27,7 @@ class SubdepartamentoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoresubdepartamentoRequest $request)
+    public function store(StoreSubdepartamentoRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class SubdepartamentoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(subdepartamento $subdepartamento)
+    public function show(Subdepartamento $subdepartamento)
     {
         //
     }
@@ -43,7 +43,7 @@ class SubdepartamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(subdepartamento $subdepartamento)
+    public function edit(Subdepartamento $subdepartamento)
     {
         //
     }
@@ -51,7 +51,7 @@ class SubdepartamentoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatesubdepartamentoRequest $request, subdepartamento $subdepartamento)
+    public function update(UpdateSubdepartamentoRequest $request, Subdepartamento $subdepartamento)
     {
         //
     }
@@ -59,7 +59,7 @@ class SubdepartamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(subdepartamento $subdepartamento)
+    public function destroy(Subdepartamento $subdepartamento)
     {
         //
     }

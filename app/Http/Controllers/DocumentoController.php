@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\documento;
-use App\Http\Requests\StoredocumentoRequest;
-use App\Http\Requests\UpdatedocumentoRequest;
+use App\Models\Documento;
+use App\Http\Requests\StoreDocumentoRequest;
+use App\Http\Requests\UpdateDocumentoRequest;
 
 class DocumentoController extends Controller
 {
@@ -27,7 +27,7 @@ class DocumentoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoredocumentoRequest $request)
+    public function store(StoreDocumentoRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class DocumentoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(documento $documento)
+    public function show(Documento $documento)
     {
         //
     }
@@ -43,7 +43,7 @@ class DocumentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(documento $documento)
+    public function edit(Documento $documento)
     {
         //
     }
@@ -51,7 +51,7 @@ class DocumentoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatedocumentoRequest $request, documento $documento)
+    public function update(UpdateDocumentoRequest $request, Documento $documento)
     {
         //
     }
@@ -59,7 +59,7 @@ class DocumentoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(documento $documento)
+    public function destroy(Documento $documento)
     {
         //
     }
