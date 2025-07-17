@@ -24,11 +24,12 @@ class Empresa extends Model
     {
         return $this->hasMany(Documento::class);
     }
-
     public function archivos()
     {
-        return $this->hasMany(Archivo::class);
+        return $this->hasMany(Documento::class);
     }
+
+    
 
 
 }

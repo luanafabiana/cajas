@@ -13,9 +13,6 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-use Filament\Forms\Components\Select;
-use App\Models\Empresa; // Asegúrate de importar tu modelo Empresa
-
 class ArchivoResource extends Resource
 {
     protected static ?string $model = Archivo::class;
@@ -29,22 +26,17 @@ class ArchivoResource extends Resource
                 Forms\Components\TextInput::make('nombre')
                     ->required()
                     ->maxLength(30),
-                    
-                Select::make('empresa_id')
-                    ->label('Empresa') // Personaliza el label si lo necesitas
+                Forms\Components\TextInput::make('url')
                     ->required()
-                    ->relationship(
-                        name: 'empresa', // Nombre del método de relación en el modelo (public function empresa())
-                        titleAttribute: 'nombre', // Columna de la tabla `empresas` que se mostrará en el Select
-                    )
-                    ->searchable() // Permite búsqueda dinámica (opcional)
-                    ->preload() // Carga opciones iniciales (opcional para muchos registros)
-                    ->native(false) // Mejora la UI en algunos navegadores (opcional)
-                    //->columnSpanFull(), // Ocupa todo el ancho (opcional)
-                            ]);
+                    ->maxLength(40),
+                Forms\Components\TextInput::make('detalle')
+                    ->required()
+                    ->maxLength(45),
+                Forms\Components\TextInput::make('empresa_id')
+                    ->required()
+                    ->numeric(),
+            ]);
     }
-            
-    
 
     public static function table(Table $table): Table
     {

@@ -9,11 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Caja extends Model
 {
     use HasFactory;
-    /**
-     * Get all of the comments for the caja
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
+    protected $guarded=[];
     public function documentos(): HasMany
     {
         return $this->hasMany(Documento::class);

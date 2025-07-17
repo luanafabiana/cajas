@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Documento extends Model
 {
     use HasFactory;
+    protected $guarded=[];
 
     public function tipoDocumento(): BelongsTo
     {
@@ -26,7 +27,7 @@ class Documento extends Model
 
     public function agencia(): BelongsTo
     {
-        return $this->belongsTo(Documento::class);
+        return $this->belongsTo(Agencia::class);
     }
 
 

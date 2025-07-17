@@ -41,10 +41,14 @@ class AgenciaResource extends Resource
                     )
                     ->searchable() // Permite búsqueda dinámica (opcional)
                     ->preload() // Carga opciones iniciales (opcional para muchos registros)
-                    ->native(false) // Mejora la UI en algunos navegadores (opcional)
+                    ->native(false), // Mejora la UI en algunos navegadores (opcional)
                     //->columnSpanFull(), // Ocupa todo el ancho (opcional)
-                            ]);
-                    }
+                        
+
+                    
+                    ]);
+                        
+        }
 
     public static function table(Table $table): Table
     {

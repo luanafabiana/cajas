@@ -9,11 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Subdepartamento extends Model
 {
     use HasFactory;
-    /**
-     * Get the departamento that owns the subdepartamento
-     *
-     * @return \Illuminate\Departamentobase\Eloquent\Relations\BelongsTo
-     */
+    protected $guarded=[];
     public function departamento(): BelongsTo
     {
         return $this->belongsTo(Departamento::class);
