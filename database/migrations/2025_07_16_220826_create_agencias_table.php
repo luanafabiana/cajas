@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('agencias', function (Blueprint $table) {
             $table->id();
-            $table->string("agencia", 10);
+            $table->string("agencia", 100);
 
             $table->unsignedBigInteger("empresa_id");
             $table->foreign("empresa_id")->references("id")->on("empresas");
 
-            $table->unsignedBigInteger("documento_id");
-            $table->foreign("documento_id")->references("id")->on("documentos");
 
             
             $table->timestamps();
