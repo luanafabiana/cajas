@@ -13,6 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use Filament\Forms\Components\Select;
+use App\Models\Documento;
+
 class TipodocumentoResource extends Resource
 {
     protected static ?string $model = Tipodocumento::class;

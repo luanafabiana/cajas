@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
             EmpresaSeeder::class,
             AgenciaSeeder::class,
             CajaSeeder::class,
+            TipodocumentoSeeder::class,
+            DepartamentoSeeder::class,
+            SubdepartamentoSeeder::class,
         ]);
     }
 }
