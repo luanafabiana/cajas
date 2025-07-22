@@ -21,24 +21,24 @@ class userSeeder extends Seeder
         $user = new User();
         $user->name = 'Fabiluana' ;
         $user->email = 'fabiluana@gmail.com';
-        $user->password = Hash::make('*13131515*');
+        $user->password = Hash::make('13131515');
         $user->save();
             
         $user = new User();
         $user->name = 'Fernando' ;
-        $user->email = 'Apu@gmail.com';
-        $user->password = Hash::make('*10072025*');
+        $user->email = 'apu@gmail.com';
+        $user->password = Hash::make('10072025');
         $user->save();
 
-        $admin= Role::create(['name' => 'Admin']);
-        $cliente= Role::create(['name' => 'Cliente']);
+        $admin= Role::create(['name' => 'admin']);
+        $cliente= Role::create(['name' => 'cliente']);
 
         Permission::create(['name' => 'Crear Empresa'])->syncRoles([$admin]);
         Permission::create(['name' => 'Editar Empresa'])->syncRoles([$admin]);
         Permission::create(['name' => 'Actualizar Empresa'])->syncRoles([$admin]);
         Permission::create(['name' => 'Eliminar Empresa'])->syncRoles([$admin]);
         Permission::create(['name' => 'Mostrar Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Empresa'])->syncRoles([$admin]);
+        Permission::create(['name' => 'Listar Empresa'])->syncRoles([$admin,$cliente]);
 
         Permission::create(['name' => 'Crear Documento'])->syncRoles([$admin]);
         Permission::create(['name' => 'Editar Documento'])->syncRoles([$admin]);
@@ -81,6 +81,13 @@ class userSeeder extends Seeder
         Permission::create(['name' => 'Eliminar Caja'])->syncRoles([$admin]);
         Permission::create(['name' => 'Mostrar Caja'])->syncRoles([$admin]);
         Permission::create(['name' => 'Listar Caja'])->syncRoles([$admin]);
+
+        $Fabi=User::find(1);
+        $visita=User::find(2);
+
+        $Fabi->assignRole('admin');
+        $visita->assignRole('cliente');
+        //dd($visita);
     }
 
         

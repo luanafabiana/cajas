@@ -16,6 +16,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\ColorPicker;
 
+
+use Illuminate\Support\Facades\Auth;
+
 class EmpresaResource extends Resource
 {
     protected static ?string $model = Empresa::class;
@@ -44,6 +47,7 @@ class EmpresaResource extends Resource
                     ->maxLength(20)
                     ->default(null),
                 FileUpload::make('logo')
+                    ->visible(fn (): bool => auth()->user()->hasRole(['admin']))
                     ->directory('logos')  // Carpeta donde se guardarán los archivos (dentro de `storage/app/public`)
                     ->image()            // Asegura que solo se suban imágenes (opcional)
                     ->maxSize(2048)      // Tamaño máximo en KB (ej: 2MB)
@@ -52,6 +56,7 @@ class EmpresaResource extends Resource
                     ->openable(),         // Permite abrir el archivo en una nueva pestaña (opcional),
                       // Ocupa todo el ancho del formulario (opcional)
                 ColorPicker::make('color')
+                    ->visible(fn (): bool => auth()->user()->hasRole(['admin']))
                     ->default(null) // Valor por defecto (opcional)
                     ->nullable()   // Permite que el campo sea opcional
                     ->hex()        // Formato RGB (también puedes usar ->hex() o ->rgba())
@@ -113,5 +118,9 @@ class EmpresaResource extends Resource
             'create' => Pages\CreateEmpresa::route('/create'),
             'edit' => Pages\EditEmpresa::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can('Listar Empresa'); //Permiso 
     }
 }
