@@ -13,6 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+use Illuminate\Support\Facades\Auth;
+
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
@@ -60,5 +63,9 @@ class RoleResource extends Resource
             'create' => Pages\CreateRole::route('/create'),
             'edit' => Pages\EditRole::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Role']); //Permiso 
     }
 }

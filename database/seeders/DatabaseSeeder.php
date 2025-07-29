@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             TipodocumentoSeeder::class,
             DepartamentoSeeder::class,
             SubdepartamentoSeeder::class,
+            DocumentoSeeder::class,
         ]);
     }
 }

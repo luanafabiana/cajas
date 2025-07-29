@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use App\Models\Empresa; // Asegúrate de importar tu modelo Empresa
 
+use Illuminate\Support\Facades\Auth;
+
 
 class AgenciaResource extends Resource
 {
@@ -95,5 +97,9 @@ class AgenciaResource extends Resource
             'create' => Pages\CreateAgencia::route('/create'),
             'edit' => Pages\EditAgencia::route('/{record}/edit'),
         ];
+    }
+     public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Agencia']); //Permiso 
     }
 }

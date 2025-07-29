@@ -13,6 +13,10 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+
+use Illuminate\Support\Facades\Auth;
+
+
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
@@ -85,5 +89,9 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/create'),
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Usuario']); //Permiso 
     }
 }

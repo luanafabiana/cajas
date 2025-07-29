@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 
 
+
 class DocumentoResource extends Resource
 {
     protected static ?string $model = Documento::class;

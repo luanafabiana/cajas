@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use App\Models\Empresa; // Asegúrate de importar tu modelo Empresa
 
+use Illuminate\Support\Facades\Auth;
+
 class DepartamentoResource extends Resource
 {
     protected static ?string $model = Departamento::class;
@@ -90,5 +92,9 @@ class DepartamentoResource extends Resource
             'create' => Pages\CreateDepartamento::route('/create'),
             'edit' => Pages\EditDepartamento::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Departamento']); //Permiso 
     }
 }

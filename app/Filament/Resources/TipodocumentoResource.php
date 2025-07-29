@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use App\Models\Documento;
 
+use Illuminate\Support\Facades\Auth;
+
 class TipodocumentoResource extends Resource
 {
     protected static ?string $model = Tipodocumento::class;
@@ -74,5 +76,9 @@ class TipodocumentoResource extends Resource
             'create' => Pages\CreateTipodocumento::route('/create'),
             'edit' => Pages\EditTipodocumento::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Tipodocumento']); //Permiso 
     }
 }

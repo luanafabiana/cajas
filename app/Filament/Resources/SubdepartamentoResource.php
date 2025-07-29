@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Select;
 use App\Models\Empresa; // Asegúrate de importar tu modelo Empresa
 
+use Illuminate\Support\Facades\Auth;
+
 class SubdepartamentoResource extends Resource
 {
     protected static ?string $model = Subdepartamento::class;
@@ -89,5 +91,9 @@ class SubdepartamentoResource extends Resource
             'create' => Pages\CreateSubdepartamento::route('/create'),
             'edit' => Pages\EditSubdepartamento::route('/{record}/edit'),
         ];
+    }
+    public static function canViewAny(): bool
+    {
+        return Auth::user()->can(['Listar Subdepartamento']); //Permiso 
     }
 }

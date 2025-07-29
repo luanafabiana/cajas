@@ -30,63 +30,43 @@ class userSeeder extends Seeder
         $user->password = Hash::make('10072025');
         $user->save();
 
-        $admin= Role::create(['name' => 'admin']);
-        $cliente= Role::create(['name' => 'cliente']);
-
-        Permission::create(['name' => 'Crear Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Empresa'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Empresa'])->syncRoles([$admin,$cliente]);
-
-        Permission::create(['name' => 'Crear Documento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Documento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Documento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Documento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Documento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Documento'])->syncRoles([$admin]);
-
-        Permission::create(['name' => 'Crear TipoDocumento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar TipoDocumento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar TipoDocumento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar TipoDocumento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar TipoDocumento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar TipoDocumento'])->syncRoles([$admin]);
-
-        Permission::create(['name' => 'Crear Agencia'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Agencia'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Agencia'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Agencia'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Agencia'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Agencia'])->syncRoles([$admin]);
-
-        Permission::create(['name' => 'Crear Subdepartamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Subdepartamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Subdepartamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Subdepartamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Subdepartamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Subdepartamento'])->syncRoles([$admin]);
         
-        Permission::create(['name' => 'Crear Departamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Departamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Departamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Departamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Departamento'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Departamento'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Crear Empresa'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Editar Empresa'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Actualizar Empresa'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Eliminar Empresa'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Mostrar Empresa'])->syncRoles([$admin]);
+        //Permission::create(['name' => 'Listar Empresa'])->syncRoles([$admin,$cliente]);
+        
+        
+        // no tocar
+        $rol_admin= Role::create(['name' => 'admin']);
+        $rol_cliente= Role::create(['name' => 'cliente']);
 
-        Permission::create(['name' => 'Crear Caja'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Editar Caja'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Actualizar Caja'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Eliminar Caja'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Mostrar Caja'])->syncRoles([$admin]);
-        Permission::create(['name' => 'Listar Caja'])->syncRoles([$admin]);
+        
+        Permission::create(['name' => 'Listar Empresa']);
+        Permission::create(['name' => 'Listar Agencia']);
+        Permission::create(['name' => 'Listar Departamento']);
+        Permission::create(['name' => 'Listar Subdepartamento']);
+        Permission::create(['name' => 'Listar Tipodocumento']);
+        Permission::create(['name' => 'Listar Roles']);
+        Permission::create(['name' => 'Listar Usuario']);
 
-        $Fabi=User::find(1);
-        $visita=User::find(2);
 
-        $Fabi->assignRole('admin');
-        $visita->assignRole('cliente');
+        $user_admin=User::find(1);
+        $user_visita=User::find(2);
+
+        $rol_admin->givePermissionTo(["Listar Empresa"]);
+        $rol_admin->givePermissionTo(["Listar Agencia"]);
+        $rol_admin->givePermissionTo(["Listar Departamento"]);
+        $rol_admin->givePermissionTo(["Listar Subdepartamento"]);
+        $rol_admin->givePermissionTo(["Listar Tipodocumento"]);
+        $rol_admin->givePermissionTo(["Listar Roles"]);
+        $rol_admin->givePermissionTo(["Listar Usuario"]);
+
+        
+        $user_admin->assignRole('admin');
+        $user_visita->assignRole('cliente');
         //dd($visita);
     }
 
